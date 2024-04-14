@@ -15,7 +15,7 @@ st.text('A page dedicated to the cutest most well-behaved cats in the quantumver
 
 
 
-df = pd.DataFrame(np.random.randn(20, 3), columns=['a', 'b', 'c'])
+df = pd.DataFrame(np.random.randn(20, 3), columns=['Zela's Cuteness', 'Daisy's Cuteness', 'Overall Cat Graciouseness'])
 st.line_chart(df)
 
 # Generate a date range for a month
@@ -24,7 +24,7 @@ dates = pd.date_range(start="2024-01-01", end="2024-01-31")
 # Weather data remains the same as the previous example
 kitty_data = {
     "Zela's Cuteness": np.round(np.random.normal(loc=18, scale=5, size=len(dates)), 1),
-    "Daisy's Cuteness (%)": np.random.randint(40, 80, size=len(dates)),
+    "Daisy's Cuteness": np.random.randint(40, 80, size=len(dates)),
     "Overall Cat Graciouseness": np.round(np.random.uniform(5, 20, size=len(dates)), 1)
 }
 df_cats = pd.DataFrame(kitty_data, index=dates)
