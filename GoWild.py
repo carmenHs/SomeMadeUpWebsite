@@ -80,7 +80,7 @@ else:
 
 
 # Get your OpenAI API key from environment variables 
-api_key = os.getenv("OPENAI_API_KEY")  # Used in production
+api_key = os.getenv("OPENAI_API_KEY2")  # Used in production
 client = OpenAI(api_key=api_key)
 
 # Cell 2: Title & Description
