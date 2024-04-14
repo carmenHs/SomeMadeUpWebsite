@@ -37,13 +37,13 @@ people_info = {
 }
 
 # Use a sidebar selectbox for the user to choose a name
-selected_name = st.sidebar.selectbox('Zarmen Family Tree. See more info about...', list(people_info.keys()))
+selected_name = st.sidebar.selectbox('Harmon Family Tree. See more info about...', list(people_info.keys()))
 
 # Retrieve the country and favorite color for the selected name
 selected_info = people_info[selected_name]
 
 # Display the customized sentence with HTML for styling
-st.markdown(f"<b>{selected_name}</b> <b>{selected_info['Info']}</b>. and their trait is : <b>{selected_info['type']}</b>.", unsafe_allow_html=True)
+st.markdown(f"<b>{selected_name}</b> <b>{selected_info['Info']}</b>. Personal trait : <b>{selected_info['type']}</b>.", unsafe_allow_html=True)
 
 # Get your OpenAI API key from environment variables 
 api_key = os.getenv("OPENAI_API_KEY2")  # Used in production
