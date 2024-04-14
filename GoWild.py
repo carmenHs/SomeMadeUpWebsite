@@ -30,8 +30,8 @@ kitty_data = {
 df_cats = pd.DataFrame(kitty_data, index=dates)
 
 people_info = {
-    "Hunter": {"Info": "BOTH Daisy and Zelda!", "type": "Afro"},
-    "Carmen": {"Info": "BOTH Daisy and Zelda!", "type": "kinda short in height"},
+    "Hunter": {"Info": "luvs BOTH Daisy and Zelda!", "type": "Afro"},
+    "Carmen": {"Info": "luvs BOTH Daisy and Zelda!", "type": "kinda short in height"},
     "Daisy": {"Info": "is 1 yr (almost)", "type": "medium hair Snuggle Bug!"},
     "Zelda": {"Info": "is 1 and a few months", "type": "long hair Cutey!"},
 }
