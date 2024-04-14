@@ -10,9 +10,8 @@ import numpy as np
 
 st.title('Hello, Lonely Octopus!')
 
-st.header('This is a header')
-st.subheader('This is a subheader')
-st.text('This is some black text.')
+st.header('Princess Zelda & Princess Daisy')
+st.text('A page dedicated to the cutest most well-behaved cats in the quantumverse XD')
 
 
 
@@ -23,46 +22,28 @@ st.line_chart(df)
 dates = pd.date_range(start="2024-01-01", end="2024-01-31")
 
 # Weather data remains the same as the previous example
-weather_data = {
-    "Avg Temperature (°C)": np.round(np.random.normal(loc=18, scale=5, size=len(dates)), 1),
-    "Humidity (%)": np.random.randint(40, 80, size=len(dates)),
-    "Wind Speed (km/h)": np.round(np.random.uniform(5, 20, size=len(dates)), 1)
+kitty_data = {
+    "Zela's Cuteness": np.round(np.random.normal(loc=18, scale=5, size=len(dates)), 1),
+    "Daisy's Cuteness (%)": np.random.randint(40, 80, size=len(dates)),
+    "Overall Cat Graciouseness": np.round(np.random.uniform(5, 20, size=len(dates)), 1)
 }
-df_weather = pd.DataFrame(weather_data, index=dates)
-
-# Generating monthly sales data for different services
-services = ["Cruises", "Skydiving", "Water skiing"]
-sales_data = {
-    service: np.random.randint(200, 500, size=12) for service in services
-}
-months = pd.date_range(start="2024-01-01", end="2024-12-01", freq='MS')
-df_sales = pd.DataFrame(sales_data, index=months.strftime('%B'))
-
-chart_type = st.selectbox('Choose a chart type:', ['Line', 'Bar'])
-
-if chart_type == 'Line':
-    st.write("Weather Data Overview")
-    st.line_chart(df_weather)
-elif chart_type == 'Bar':
-    st.write("Monthly Sales Data")
-    st.bar_chart(df_sales)
+df_cats = pd.DataFrame(kitty_data, index=dates)
 
 people_info = {
-    "Tina": {"country": "Canada", "fav_color": "yellow"},
-    "Rex": {"country": "the Phillipines", "fav_color": "purple"},
-    "Harshit": {"country": "India", "fav_color": "orange"},
-    "Julian": {"country": "Australia", "fav_color": "black"},
-    "Ibraheem": {"country": "Morocco", "fav_color": "light blue"},
+    "Hunter": {"Info": "BOTH Daisy and Zelda!", "type": "Afro"},
+    "Carmen": {"Info": "BOTH Daisy and Zelda!", "type": "kinda short in height"},
+    "Daisy": {"Info": "is 1 yr (almost)", "type": "medium hair Snuggle Bug!"},
+    "Zelda": {"Info": "is 1 and a few months", "type": "long hair Cutey!"},
 }
 
 # Use a sidebar selectbox for the user to choose a name
-selected_name = st.sidebar.selectbox('Which Lonely Octopus are you interested in?', list(people_info.keys()))
+selected_name = st.sidebar.selectbox('Zarmen Family Tree. See more info about...', list(people_info.keys()))
 
 # Retrieve the country and favorite color for the selected name
 selected_info = people_info[selected_name]
 
 # Display the customized sentence with HTML for styling
-st.markdown(f"<b>{selected_name}</b> is from <b>{selected_info['country']}</b>. Favorite color: <b>{selected_info['fav_color']}</b>.", unsafe_allow_html=True)
+st.markdown(f"<b>{selected_name}</b> <b>{selected_info['Info']}</b>. and their trait is : <b>{selected_info['type']}</b>.", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 with col1:
@@ -85,7 +66,7 @@ client = OpenAI(api_key=api_key)
 
 # Cell 2: Title & Description
 st.title('🤖 AI Content Assistant')
-st.markdown('I was made to help you craft interesting Social media posts.')
+st.markdown('What do you need to know about what makes Zelda and Daisy so amazing?.')
 
 # Cell 3: Function to generate text using OpenAI
 def analyze_text(text):
@@ -98,8 +79,8 @@ def analyze_text(text):
 
     # Instructions for the AI (adjust if needed)
     messages = [
-        {"role": "system", "content": "You are an assistant who helps craft social media posts."},
-        {"role": "user", "content": f"Please help me write a social media post based on the following, make sure you detail with bullet points and steps:\n{text}"}
+        {"role": "system", "content": "You are an assistant who helps educate people on the beauty of cats."},
+        {"role": "user", "content": f"Please help me understand more about cats given the following point of curiosity, make sure you detail with bullet points and real life examples:\n{text}"}
     ]
 
     response = client.chat.completions.create(
@@ -128,13 +109,13 @@ def generate_image(text):
     return response.data[0].url
 
 # Cell 4: Streamlit UI 
-user_input = st.text_area("Enter a brief for your post:", "How should you maintain a deployed model?")
+user_input = st.text_area("Curiosity is not just for cats! What are the mysteries of Zelda and Daisy you would like to uncover?")
 
 if st.button('Generate Post Content'):
     with st.spinner('Generating Text...'):
         post_text = analyze_text(user_input)
         st.write(post_text)
 
-    with st.spinner('Generating Thumbnail...'):
-        thumbnail_url = generate_image(user_input)  # Consider adjusting the prompt for image generation if needed
+    with st.spinner('Generating Cat Image...'):
+        catimage_url = generate_image(user_input)  # Consider adjusting the prompt for image generation if needed
         st.image(thumbnail_url, caption='Generated Thumbnail')
