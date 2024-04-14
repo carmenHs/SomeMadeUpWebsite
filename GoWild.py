@@ -45,21 +45,6 @@ selected_info = people_info[selected_name]
 # Display the customized sentence with HTML for styling
 st.markdown(f"<b>{selected_name}</b> <b>{selected_info['Info']}</b>. and their trait is : <b>{selected_info['type']}</b>.", unsafe_allow_html=True)
 
-col1, col2 = st.columns(2)
-with col1:
-    st.line_chart(df['a'])
-with col2:
-    st.line_chart(df['b'])
-
-with st.expander("See explanation"):
-    st.text("Here you can put in detailed explanations.")
-
-if st.button('What is Streamlit?'):
-    st.write('A faster way to build and share data apps. Streamlit turns data scripts into shareable web apps in minutes.')
-else:
-    st.write('Click me to define streamlit.')
-
-
 # Get your OpenAI API key from environment variables 
 api_key = os.getenv("OPENAI_API_KEY2")  # Used in production
 client = OpenAI(api_key=api_key)
