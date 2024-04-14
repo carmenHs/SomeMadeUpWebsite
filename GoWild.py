@@ -8,7 +8,7 @@ import os
 import pandas as pd
 import numpy as np
 
-st.title('Hello, Lonely Octopus!')
+st.title('Hello!')
 
 st.header('Princess Zelda & Princess Daisy')
 st.text('A page dedicated to the cutest most well-behaved cats in the quantumverse XD')
