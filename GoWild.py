@@ -15,7 +15,7 @@ st.text('A page dedicated to the cutest most well-behaved cats in the quantumver
 
 
 
-df = pd.DataFrame(np.random.randn(20, 3), columns=['Zela's Cuteness', 'Daisy's Cuteness', 'Overall Cat Graciouseness'])
+df = pd.DataFrame(np.random.randn(20, 3), columns=['Zelas Cuteness', 'Daisys Cuteness', 'Overall Cat Graciouseness'])
 st.line_chart(df)
 
 # Generate a date range for a month
