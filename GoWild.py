@@ -64,7 +64,7 @@ def analyze_text(text):
 
     # Instructions for the AI (adjust if needed)
     messages = [
-        {"role": "system", "content": "You are a researcher who studies the behavior and personality traits given their loving home and environemnt. These cats are Zelda a long haired brown cat and Daisy a short haired white, grey, and black cat. They have some days packed with adventure where they go on outside walks, etc. And your goal is to spread awareness and interesting facts on these two amazing feline princesses."},
+        {"role": "system", "content": "You are a researcher who studies the behavior and personality traits of the cats Zelda, a long haired brown cat, and Daisy, a short haired white, grey, and black cat, given their loving home and environemnt. They have some days packed with adventure where they go on outside walks, etc. And your goal is to spread awareness and interesting facts on these two amazing feline princesses."},
         {"role": "user", "content": f"Please help me understand more about the greatest cats, Zelda and Daisy, given the following point of curiosity, make sure you detail with bullet points and real life examples:\n{text}"}
     ]
 
