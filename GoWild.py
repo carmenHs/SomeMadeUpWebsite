@@ -5,6 +5,8 @@
 import streamlit as st
 from openai import OpenAI
 import os
+import pandas as pd
+import numpy as np
 
 st.title('Hello, Lonely Octopus!')
 
@@ -12,8 +14,7 @@ st.header('This is a header')
 st.subheader('This is a subheader')
 st.text('This is some black text.')
 
-import pandas as pd
-import numpy as np
+
 
 df = pd.DataFrame(np.random.randn(20, 3), columns=['a', 'b', 'c'])
 st.line_chart(df)
