@@ -8,7 +8,7 @@ import os
 import pandas as pd
 import numpy as np
 
-st.title('Template Generator!')
+st.title('Presentation on AI Tools!')
 
 st.header('Generate a template for your your customers.')
 st.text('A page for generating helpful templates by Wize Solutions.')
@@ -49,8 +49,8 @@ api_key = os.getenv("OPENAI_API_KEY")  # Used in production
 client = OpenAI(api_key=api_key)
 
 # Cell 2: Title & Description
-st.title('🤖 AI Template Generation Assistant')
-st.markdown('What Template do you need?.')
+st.title('🤖 Wize Solutions AI Template Generation Assistant')
+st.markdown('What Template can I assist you with?.')
 
 # Cell 3: Function to generate text using OpenAI
 def analyze_text(text):
@@ -93,7 +93,7 @@ def generate_image(text):
     return response.data[0].url
 
 # Cell 4: Streamlit UI 
-user_input = st.text_area("What type of template can I help you generate?")
+user_input = st.text_area("Enter a Template description:", "What type of template can I help you generate?")
 
 if st.button('Generate Template'):
     with st.spinner('Generating...'):
