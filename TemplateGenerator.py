@@ -101,5 +101,5 @@ if st.button('Generate Template'):
         st.write(post_text)
 
     with st.spinner('Generating Image...'):
-        image_url = generate_image(user_input+", make the image look like a formatted template with lines as placeholders for the text.")  # Consider adjusting the prompt for image generation if needed
+        image_url = generate_image(user_input+", make the image look like a formatted template with lines as placeholders for the text and include an geeky animated office employee implementing the template.")  # Consider adjusting the prompt for image generation if needed
         st.image(image_url, caption='Generated Template Image')
