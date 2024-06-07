@@ -101,5 +101,5 @@ if st.button('Generate Template'):
         st.write(post_text)
 
     with st.spinner('Generating Image...'):
-        catimage_url = generate_image(user_input)  # Consider adjusting the prompt for image generation if needed
-        st.image(thumbnail_url, caption='Generated Template Image')
+        image_url = generate_image(user_input)  # Consider adjusting the prompt for image generation if needed
+        st.image(image_url, caption='Generated Template Image')
