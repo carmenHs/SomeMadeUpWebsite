@@ -50,7 +50,7 @@ client = OpenAI(api_key=api_key)
 
 # Cell 2: Title & Description
 st.title('🤖 Wize Solutions AI Template Generation Assistant')
-st.markdown('What Template can I assist you with?.')
+st.markdown('What Template can I assist you with?')
 
 # Cell 3: Function to generate text using OpenAI
 def analyze_text(text):
