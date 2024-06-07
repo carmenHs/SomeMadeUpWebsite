@@ -46,7 +46,7 @@ selected_info = people_info[selected_name]
 st.markdown(f"<b>{selected_name}</b> <b>{selected_info['Info']}</b>. Personal trait : <b>{selected_info['type']}</b>.", unsafe_allow_html=True)
 
 # Get your OpenAI API key from environment variables 
-api_key = os.getenv("OPENAI_API_KEY2")  # Used in production
+api_key = os.getenv("OPENAI_API_KEY")  # Used in production
 client = OpenAI(api_key=api_key)
 
 # Cell 2: Title & Description
