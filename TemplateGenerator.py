@@ -32,7 +32,7 @@ df_cats = pd.DataFrame(kitty_data, index=dates)
 people_info = {
     "Value1": {"Info": "these are more details on value1", "type": "Value1"},
     "Value2": {"Info": "these are more details on value2", "type": "Value2"},
-    "Value3": {"Info": "these are more details on value3", "type": "Value3"},
+    "Value3": {"Info": "these are more details on value3", "type": "Value3"}
 }
 
 # Use a sidebar selectbox for the user to choose a name
